@@ -28,7 +28,12 @@ provider "aws" {
   alias  = "staging"
 }
 
-module "subdomain" {
+provider "aws" {
+  region = "us-west-2"
+  alias  = "production"
+}
+
+module "staging" {
   source = "git@github.com:thoughtbot/terraform-route-53-delegated-subdomain.git?ref=v0.1.0"
 
   providers = {
@@ -38,6 +43,22 @@ module "subdomain" {
 
   root_domain_name = "example.com"
   subdomain        = "staging"
+}
+
+module "production" {
+  source = "git@github.com:thoughtbot/terraform-route-53-delegated-subdomain.git?ref=v0.1.0"
+
+  providers = {
+    aws.root      = aws.network
+    aws.subdomain = aws.production
+  }
+
+  root_domain_name = "example.com"
+  subdomain        = "www"
+
+  aliases = {
+    "example.com" = "www.example.com"
+  }
 }
 ```
 
@@ -64,6 +85,7 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [aws_route53_record.alias](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
 | [aws_route53_record.ns](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
 | [aws_route53_zone.subdomain](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_zone) | resource |
 | [aws_route53_zone.root](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/route53_zone) | data source |
@@ -72,6 +94,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_aliases"></a> [aliases](#input\_aliases) | Aliases from the root domain to the subdomain | `map(string)` | `{}` | no |
 | <a name="input_root_domain_name"></a> [root\_domain\_name](#input\_root\_domain\_name) | Domain name (ie example.com) for the root hosted zone | `string` | n/a | yes |
 | <a name="input_subdomain"></a> [subdomain](#input\_subdomain) | Subdomain (ie www) for which a hosted zone should be delegated | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags which should be applied to created resources | `map(string)` | `{}` | no |

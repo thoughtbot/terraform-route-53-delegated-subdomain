@@ -1,3 +1,9 @@
+variable "aliases" {
+  type        = map(string)
+  description = "Aliases from the root domain to the subdomain"
+  default     = {}
+}
+
 variable "root_domain_name" {
   type        = string
   description = "Domain name (ie example.com) for the root hosted zone"
