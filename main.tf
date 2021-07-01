@@ -26,8 +26,10 @@ resource "aws_route53_record" "alias" {
   alias {
     evaluate_target_health = true
     name                   = each.value
-    zone_id                = aws_route53_zone.subdomain.zone_id
+    zone_id                = data.aws_route53_zone.root.zone_id
   }
+
+  depends_on = [aws_route53_zone.subdomain]
 }
 
 
