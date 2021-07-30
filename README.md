@@ -81,5 +81,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_name"></a> [name](#output\_name) | Full name of the subdomain |
 | <a name="output_subdomain_zone_id"></a> [subdomain\_zone\_id](#output\_subdomain\_zone\_id) | Zone ID of the subdomain hosted zone |
 <!-- END_TF_DOCS -->
