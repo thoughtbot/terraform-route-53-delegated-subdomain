@@ -84,3 +84,29 @@ No modules.
 | <a name="output_name"></a> [name](#output\_name) | Full name of the subdomain |
 | <a name="output_subdomain_zone_id"></a> [subdomain\_zone\_id](#output\_subdomain\_zone\_id) | Zone ID of the subdomain hosted zone |
 <!-- END_TF_DOCS -->
+
+## Contributing
+
+Please see [CONTRIBUTING.md](./CONTRIBUTING.md).
+
+## License
+
+This module is Copyright © 2021 Joe Ferris and thoughtbot. It is free
+software, and may be redistributed under the terms specified in the [LICENSE]
+file.
+
+[LICENSE]: ./LICENSE
+
+About thoughtbot
+----------------
+
+![thoughtbot](https://thoughtbot.com/brand_assets/93:44.svg)
+
+This module is maintained and funded by thoughtbot, inc. The names and logos
+for thoughtbot are trademarks of thoughtbot, inc.
+
+We love open source software! See [our other projects][community] or [hire
+us][hire] to design, develop, and grow your product.
+
+[community]: https://thoughtbot.com/community?utm_source=github
+[hire]: https://thoughtbot.com/hire-us?utm_source=github
