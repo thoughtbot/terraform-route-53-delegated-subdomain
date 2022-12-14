@@ -13,7 +13,7 @@ terraform {
 
   required_providers {
     aws       = {
-      version = "~> 3.0"
+      version = "~> 4.0"
     }
   }
 }
@@ -29,7 +29,7 @@ provider "aws" {
 }
 
 module "subdomain" {
-  source = "git@github.com:thoughtbot/terraform-route-53-delegated-subdomain.git?ref=v0.1.0"
+  source = "git@github.com:thoughtbot/terraform-route-53-delegated-subdomain.git?ref=v0.3.0"
 
   providers = {
     aws.root      = aws.network
@@ -47,14 +47,14 @@ module "subdomain" {
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.14.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 3.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws.root"></a> [aws.root](#provider\_aws.root) | 3.46.0 |
-| <a name="provider_aws.subdomain"></a> [aws.subdomain](#provider\_aws.subdomain) | 3.46.0 |
+| <a name="provider_aws.root"></a> [aws.root](#provider\_aws.root) | ~> 4.0 |
+| <a name="provider_aws.subdomain"></a> [aws.subdomain](#provider\_aws.subdomain) | ~> 4.0 |
 
 ## Modules
 

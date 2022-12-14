@@ -5,7 +5,7 @@ terraform {
     aws = {
       configuration_aliases = [aws.root, aws.subdomain]
       source                = "hashicorp/aws"
-      version               = "~> 3.0"
+      version               = "~> 4.0"
     }
   }
 }
