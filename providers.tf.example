@@ -1,0 +1,9 @@
+provider "aws" {
+  alias  = "root"
+  region = "us-east-1"
+}
+
+provider "aws" {
+  alias  = "subdomain"
+  region = "us-east-1"
+}

@@ -2,7 +2,7 @@ TFLINTRC    := .tflint.hcl
 MODULEFILES := $(wildcard *.tf)
 
 .PHONY: default
-default: checkfmt docs lint
+default: checkfmt validate docs lint
 
 .PHONY: checkfmt
 checkfmt: .fmt
@@ -11,6 +11,9 @@ checkfmt: .fmt
 fmt: $(MODULEFILES)
 	terraform fmt
 	@touch .fmt
+
+.PHONY: validate
+validate: .validate
 
 .PHONY: docs
 docs: README.md
@@ -40,6 +43,16 @@ init: .init
 	terraform init -backend=false
 	@touch .init
 
+.validate: .init $(MODULEFILES) $(wildcard *.tf.example)
+	echo | cat - $(wildcard *.tf.example) > test.tf
+	if AWS_DEFAULT_REGION=us-east-1 terraform validate; then \
+		rm test.tf; \
+		touch .validate; \
+	else \
+		rm test.tf; \
+		false; \
+	fi
+
 .PHONY: clean
 clean:
-	rm -rf .fmt .init .lint .lintinit .terraform
+	rm -rf .fmt .init .lint .lintinit .terraform .validate

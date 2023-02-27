@@ -53,8 +53,8 @@ module "subdomain" {
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws.root"></a> [aws.root](#provider\_aws.root) | 3.46.0 |
-| <a name="provider_aws.subdomain"></a> [aws.subdomain](#provider\_aws.subdomain) | 3.46.0 |
+| <a name="provider_aws.root"></a> [aws.root](#provider\_aws.root) | ~> 3.0 |
+| <a name="provider_aws.subdomain"></a> [aws.subdomain](#provider\_aws.subdomain) | ~> 3.0 |
 
 ## Modules
 
