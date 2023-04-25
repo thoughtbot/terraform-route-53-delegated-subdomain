@@ -29,7 +29,7 @@ provider "aws" {
 }
 
 module "subdomain" {
-  source = "git@github.com:thoughtbot/terraform-route-53-delegated-subdomain.git?ref=v0.1.0"
+  source = "git@github.com:thoughtbot/terraform-route-53-delegated-subdomain.git?ref=v0.3.0"
 
   providers = {
     aws.root      = aws.network
