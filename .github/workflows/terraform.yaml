@@ -55,7 +55,7 @@ jobs:
       uses: hashicorp/setup-terraform@v2
 
     - name: Setup TFLint
-      uses: terraform-linters/setup-tflint@v3
+      uses: terraform-linters/setup-tflint@v4
       with:
         tflint_version: v0.45.0
 
