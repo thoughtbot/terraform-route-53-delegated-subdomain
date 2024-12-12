@@ -47,14 +47,14 @@ module "subdomain" {
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws.root"></a> [aws.root](#provider\_aws.root) | ~> 4.0 |
-| <a name="provider_aws.subdomain"></a> [aws.subdomain](#provider\_aws.subdomain) | ~> 4.0 |
+| <a name="provider_aws.root"></a> [aws.root](#provider\_aws.root) | ~> 5.0 |
+| <a name="provider_aws.subdomain"></a> [aws.subdomain](#provider\_aws.subdomain) | ~> 5.0 |
 
 ## Modules
 
